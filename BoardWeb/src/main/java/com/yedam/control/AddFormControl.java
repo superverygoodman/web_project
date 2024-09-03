@@ -20,7 +20,7 @@ public class AddFormControl implements Control {
 //		PrintWriter out = response.getWriter();
 //		out.print("<h3>"+"hello"+"</h3>");
 		
-		
+		//커밋테스트하려고 수정했습니다
 		
 	}
 
