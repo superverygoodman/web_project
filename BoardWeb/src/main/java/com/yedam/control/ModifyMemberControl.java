@@ -38,7 +38,6 @@ public class ModifyMemberControl implements Control {
 		} else {
 			request.setAttribute("msg", "등록중 오류가 있습니다/");
 			request.getRequestDispatcher("WEB-INF/html/modifyForm.jsp").forward(request, response);
-			
 		}
 		
 	}

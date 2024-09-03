@@ -5,7 +5,7 @@
 <h3>회원상세정보</h3>
 <%
 	MemberVO member = (MemberVO) request.getAttribute("memberInfo");
-	
+	String msg = (String) request.getAttribute("msg");
 %>
 
 	<table class="table">
@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<td><button class = "btn btn-info" onclick="location.href ='modifyForm.do?id=<%=member.getMemberId() %>'">수정</button>
-			    <button class = "btn btn-danger">삭제</button>
+			    <button class = "btn btn-danger" onclick="location.href ='removeMember.do?id=<%=member.getMemberId() %>'">삭제</button>
 			</td>
 		</tr>		
 		

@@ -25,7 +25,7 @@
   	<!-- 주석  : 회원삭제 -->
   	<delete id ="deleteMEmber" parameterType = "String">
   		delete from tbl_member
-  		where member_id = #{memberId},
+  		where member_id = #{memberId}
   	</delete>
   	
   	<!-- 단건조회 : 회원추가할 떄 회원아이디가 있는지 확인, 조회할 경우. -->

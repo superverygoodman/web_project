@@ -46,6 +46,7 @@ public class FrontController extends HttpServlet{
 		map.put("/intro.do", new introControll());
 		map.put("/index.do", new indexControll());
 		map.put("/memberList.do", new MemberListControl());
+		map.put("/removeMember.do", new removeMember());
 	}
 	
 	//-> 톰캣이 이닛과 서비스사이에서 밑에거 두개 객체를 생성함.(HttpServletRequest,HttpServletReponse)

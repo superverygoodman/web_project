@@ -19,6 +19,7 @@ import com.yedam.control.MainControl;
 import com.yedam.control.MemberListControl;
 import com.yedam.control.ModFormControl;
 import com.yedam.control.ModifyMemberControl;
+import com.yedam.control.RemoveMemberControl;
 import com.yedam.control.SubControl;
 import com.yedam.control.indexControll;
 import com.yedam.control.introControll;
@@ -42,16 +43,23 @@ public class FrontController extends HttpServlet{
 		System.out.println("init 메소드");
 		map.put("/main.do", new MainControl());
 		map.put("/sub.do", new SubControl());
-		
+		Map<String, Control> memberMenu = MenuMember.getInstance().menuMap();
+		Map<String, Control> boardMenu  = MenuBoard.getInstance().menuMap();
+		//이렇게 나눈 이유는 충돌위험떄문에 한개의 파일에 작업을 여러사람이 나눠서 써서 충돌위험있음.
+		map.putAll(memberMenu);//멤버관련 메뉴추가
+		map.putAll(boardMenu);//게시글 관련 추가
 		//기능등록.
-		map.put("/addMember.do", new AddMemberControl());  //회원등록처리
-		map.put("/addForm.do", new AddFormControl()); //회원등록페이지.
-		map.put("/intro.do", new introControll());
-		map.put("/index.do", new indexControll());
-		map.put("/memberList.do", new MemberListControl()); 
-		map.put("/getMember.do", new GetMemberControl()); // 회원아이디를 기준으로 상세조회;
-		map.put("/modifyForm.do", new ModFormControl());  //수정화면 호출
-		map.put("/modifyMember.do", new ModifyMemberControl()); //수정처리
+//		map.put("/addMember.do", new AddMemberControl());  //회원등록처리
+//		map.put("/addForm.do", new AddFormControl()); //회원등록페이지.
+//		map.put("/intro.do", new introControll());
+//		map.put("/index.do", new indexControll());
+//		map.put("/memberList.do", new MemberListControl()); 
+//		map.put("/getMember.do", new GetMemberControl()); // 회원아이디를 기준으로 상세조회;
+//		map.put("/modifyForm.do", new ModFormControl());  //수정화면 호출
+//		map.put("/modifyMember.do", new ModifyMemberControl()); //수정처리
+//		map.put("/removeMember.do", new RemoveMemberControl());
+		
+		//가능을 추가합니다.
 	}
 	
 	//-> 톰캣이 이닛과 서비스사이에서 밑에거 두개 객체를 생성함.(HttpServletRequest,HttpServletReponse)

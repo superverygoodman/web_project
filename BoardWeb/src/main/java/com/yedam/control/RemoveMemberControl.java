@@ -1,7 +1,6 @@
 package com.yedam.control;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,17 +11,22 @@ import com.yedam.service.MemberService;
 import com.yedam.service.MemberServiceImpl;
 import com.yedam.vo.MemberVO;
 
-public class MemberListControl implements Control {
+public class RemoveMemberControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		response.setContentType("text/html; charset=utf-8");
+		String id = request.getParameter("id");
 		MemberService svc = new MemberServiceImpl();
-		List <MemberVO> list = svc.getMembers();
 		
-		
-		request.setAttribute("memberList", list);
-		request.getRequestDispatcher("WEB-INF/html/memberList.jsp").forward(request, response);
+		if(svc.removeMember(id)) {
+			response.sendRedirect("memberList.do");
+			} else {
+				request.setAttribute("msg", "삭제실패!");
+				request.getRequestDispatcher("WEB-INF/html/memberInfo.jsp");
+			}
+		}
+
 	}
 
-}
+
