@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings> 
+		<setting name="mapUnderscoreToCamelCase" value="true"/> <!--이거 필수임 왜냐하면
+		전통적인 데이터베이스 칼럼명 형태인 A_COLUMN을 CamelCase형태의 자바 프로퍼티명 형태인 aColumn으로 자동으로 매핑하도록 함  sql에 있는걸 카멜케이스로 바꿔줌  -->
+	</settings>
+	
+	<typeAliases>
+	</typeAliases>
+	
+	
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521/xe"/>
+        <property name="username" value="javadb"/>
+        <property name="password" value="1234"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <mapper resource="com/yedam/mapper/MemberMapper.xml"/>
+  </mappers>
+</configuration>
