@@ -20,7 +20,7 @@ public class MemberVO  {
 	private String password;
 	private String email;
 	private String authority;
-	private Date   craetionDate;
+	private Date   creation;
 	
 
 }

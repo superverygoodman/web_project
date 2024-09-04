@@ -22,7 +22,7 @@
 			<th>이메일</th><td><%=member.getEmail() %></td>
 		</tr>
 		<tr>
-			<th>가입일자</th><td><%=member.getCreation()%></td>
+			<th>가입일자</th><td><%=member.getCraetionDate()%></td>
 		</tr>
 		<tr>
 			<td><button class = "btn btn-info" onclick="location.href ='modifyForm.do?id=<%=member.getMemberId() %>'">수정</button>

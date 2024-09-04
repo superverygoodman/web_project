@@ -64,7 +64,7 @@ public class FrontController extends HttpServlet{
 	
 	//-> 톰캣이 이닛과 서비스사이에서 밑에거 두개 객체를 생성함.(HttpServletRequest,HttpServletReponse)
 	//그래서 서비스메서드한테 전달해줌.
-	//HttpServletRequest
+	//HttpServletRequest ->서비스탄생순간 사라짐
 	//HttpServletReponse
 	
 	@Override

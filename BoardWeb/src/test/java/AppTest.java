@@ -10,21 +10,25 @@ import com.yedam.vo.MemberVO;
 public class AppTest {
 
 	public static void main(String[] args) {
-		MemberVO mvo = new MemberVO();
-		mvo.setMemberId("user04");
-		mvo.setMemberName("김김치");
-		mvo.setPassword("1111");
-		mvo.setEmail("kim@email.com");
+//		MemberVO mvo = new MemberVO();
+//		mvo.setMemberId("user04");
+//		mvo.setMemberName("김김치");
+//		mvo.setPassword("1111");
+//		mvo.setEmail("kim@email.com");
 		
 		SqlSessionFactory factory =  DataSource.getInstance();
 		SqlSession session = factory.openSession();
 		MemberMapper mapper = session.getMapper(MemberMapper.class);
 		
-		mapper.insertMember(mvo);
-		List<MemberVO> list = mapper.memberList();
-		list.forEach(member -> {
-			System.out.println(member.toString());
-		});
+//		mapper.insertMember(mvo);
+//		List<MemberVO> list = mapper.memberList();
+//		list.forEach(member -> {
+//			System.out.println(member.toString());
+//		});
+		
+		mapper.s
+		
+		
 	}
 
 }

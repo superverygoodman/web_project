@@ -9,7 +9,6 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.yedam.vo.BoardVO" alias="board"/>
 	</typeAliases>
 	
 	
@@ -27,6 +26,5 @@
   
   <mappers>
     <mapper resource="com/yedam/mapper/MemberMapper.xml"/>
-    <mapper resource="com/yedam/mapper/BoardMapper.xml"/>
   </mappers>
 </configuration>

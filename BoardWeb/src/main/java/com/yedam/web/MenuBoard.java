@@ -6,8 +6,11 @@ import java.util.Map;
 import com.yedam.common.Control;
 import com.yedam.control.AddFormControl;
 import com.yedam.control.AddMemberControl;
+import com.yedam.control.BoardControl;
+import com.yedam.control.BoardListControl;
 import com.yedam.control.GetMemberControl;
 import com.yedam.control.MemberListControl;
+import com.yedam.control.ModBoardControl;
 import com.yedam.control.ModFormControl;
 import com.yedam.control.ModifyMemberControl;
 import com.yedam.control.RemoveMemberControl;
@@ -26,8 +29,11 @@ public class MenuBoard {
 	
 	public Map<String, Control> menuMap() {
 		Map<String, Control> menu = new HashMap();
-		
-
+		menu.put("/boardList.do", new BoardListControl());
+		menu.put("/getBoard.do", new BoardControl());
+//		menu.put("/modifyBoard.do", new ModBoardControl());
 		return menu;
 	}
+	
+	
 }
