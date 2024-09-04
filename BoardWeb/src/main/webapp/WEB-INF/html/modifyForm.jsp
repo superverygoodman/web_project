@@ -22,7 +22,7 @@
 			<th>이메일</th><td><input class ="form-control" type="text" name ="email" value="<%=member.getEmail() %>"></td>
 		</tr>
 		<tr>
-			<th>가입일자</th><td><%=member.getCreationDate() %></td>
+			<th>가입일자</th><td><%=member.getCreation() %></td>
 		</tr>
 		<tr>
 			<td><button type = "submit" class = "btn btn-primary" >저장</button>

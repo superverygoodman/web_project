@@ -23,6 +23,7 @@ public class BoardControl implements Control {
 		BoardVO board =svc.getBoard(Integer.parseInt(bno));
 		request.setAttribute("board", board);
 		request.setAttribute("page", page); //jsp에 전달
+		request.setAttribute("bno", bno);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/board/board.jsp");
 		rd.forward(request, response);

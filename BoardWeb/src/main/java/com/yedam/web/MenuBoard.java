@@ -12,7 +12,9 @@ import com.yedam.control.GetMemberControl;
 import com.yedam.control.MemberListControl;
 import com.yedam.control.ModBoardControl;
 import com.yedam.control.ModFormControl;
+import com.yedam.control.ModifyBoardControl;
 import com.yedam.control.ModifyMemberControl;
+import com.yedam.control.RemoveBoardControl;
 import com.yedam.control.RemoveMemberControl;
 import com.yedam.control.indexControll;
 import com.yedam.control.introControll;
@@ -31,7 +33,9 @@ public class MenuBoard {
 		Map<String, Control> menu = new HashMap();
 		menu.put("/boardList.do", new BoardListControl());
 		menu.put("/getBoard.do", new BoardControl());
-//		menu.put("/modifyBoard.do", new ModBoardControl());
+		menu.put("/modifyBoard.do", new ModBoardControl());
+		menu.put("/modifyControl.do", new ModifyBoardControl());
+		menu.put("/removeBoard.do", new RemoveBoardControl());
 		return menu;
 	}
 	
