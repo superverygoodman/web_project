@@ -15,4 +15,6 @@ public interface MemberService {
 	MemberVO getMember(String memberId); //단건조회.
 	
 	
+	MemberVO loginCheck(String id, String pw);
+	
 }

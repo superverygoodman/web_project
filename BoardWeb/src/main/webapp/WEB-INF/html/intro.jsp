@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h3>À¯¼®ÁøÀÇ ¼Ò°³ ÆäÀÌÁö ÀÔ´Ï´Ù.</h3>
- <a href = "index.do"> index ÆäÀÌÁö·Î ÀÌµ¿</a>
+ <h3>ìœ ì„ì§„ì˜ ì†Œê°œ íŽ˜ì´ì§€ ìž…ë‹ˆë‹¤.</h3>
+ <a href = "index.do"> index íŽ˜ì´ì§€ë¡œ ì´ë™</a>
 </body>
 </html>

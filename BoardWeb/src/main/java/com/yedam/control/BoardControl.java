@@ -18,12 +18,22 @@ public class BoardControl implements Control {
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String bno = request.getParameter("bno");
 		String page = request.getParameter("page");
-				
+		
+		
+		String sc = request.getParameter("searchCondition");
+		String kw = request.getParameter("keyword");
+
+		
 		BoardService svc = new BoardServiceImpl();
 		BoardVO board =svc.getBoard(Integer.parseInt(bno));
 		request.setAttribute("board", board);
 		request.setAttribute("page", page); //jsp에 전달
 		request.setAttribute("bno", bno);
+		
+		request.setAttribute("sc", sc);
+		request.setAttribute("kw", kw);
+
+		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/board/board.jsp");
 		rd.forward(request, response);

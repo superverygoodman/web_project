@@ -1,19 +1,19 @@
 <%@page import="com.yedam.vo.MemberVO"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>>
 
 <jsp:include page="../includes/header.jsp"></jsp:include><body>
 	<%
-	//jsp ->¼­ºí¸´À¸·Î º¯È¯µÇ¾î¼­ ½ÇÇà.
-	//memberList_jsp.class ½ÇÇà.
+	//jsp ->ì„œë¸”ë¦¿ìœ¼ë¡œ ë³€í™˜ë˜ì–´ì„œ ì‹¤í–‰.
+	//memberList_jsp.class ì‹¤í–‰.
 	List<MemberVO> list = (List<MemberVO>) request.getAttribute("memberList");
 	%>
-	<h3>È¸¿ø¸ñ·Ï</h3>
+	<h3>íšŒì›ëª©ë¡</h3>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>ÀÌ¸§</th><th>È¸¿øÀÌ¸§</th><th>ÀÌ¸ÞÀÏ</th><th>±ÇÇÑ</th>
+				<th>ì´ë¦„</th><th>íšŒì›ì´ë¦„</th><th>ì´ë©”ì¼</th><th>ê¶Œí•œ</th>
 			</tr>
 		</thead>
 		<tbody>

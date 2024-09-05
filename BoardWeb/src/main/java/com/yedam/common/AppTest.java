@@ -19,6 +19,7 @@ public class AppTest {
 		BoardMapper mapper = session.getMapper(BoardMapper.class);
 		
 		
+		
 //		List<BoardVO> list = mapper.selectList();
 //		list.forEach(board -> {
 //			System.out.println(board.toString()); 
@@ -35,9 +36,17 @@ public class AppTest {
 		board.setContent("수정내용입니다");
 		board.setWriter("김씨aa");
 //		System.out.println(board.toString());
-		svc.modifyBoard(board);
-		svc.removeBoard(257);
-		svc.boardList().forEach(System.out::println); // board -. System.out.println(board)
+//		svc.modifyBoard(board);
+//		svc.removeBoard(257);
+//		svc.boardList().forEach(System.out::println); // board -. System.out.println(board)
+		
+		SearchDTO search = new SearchDTO();
+		search.setSearchCondition("T");
+		search.setKeyword("java");
+		search.setPage(1);
+		
+		svc.boardList(search).forEach(System.out::println);
+		
 	}
 
 }

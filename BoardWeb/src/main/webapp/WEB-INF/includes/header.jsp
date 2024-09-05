@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,21 +18,21 @@
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+                <div class="sidebar-heading border-bottom bg-light">Start Bootstrap ${ empty logid ? 'Й╡▄Л┼╓М┼╦' : logid}</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="addForm.do">х╦©Ь╣Н╥о</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="memberList.do">х╦©Ь╦Я╥о</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="boardList.do">╟т╫ц╠ш╦Я╥о</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="addForm.do">М ▄Л⌡░К⌠╠К║²</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="memberList.do">М ▄Л⌡░К╙╘К║²</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="boardList.do">Й╡▄Л▀°Й╦─К╙╘К║²</a>
                     <c:choose>
-                    	<c:when test="${empty logid}"> <!-- ╥н╠в╬ф©Т╩Себ -->
-		                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="loginForm.do">╥н╠вюнх╜╦И</a>
+                    	<c:when test="${empty logid}"> <!-- К║°Й╥╦Л∙└Л⌡┐Л┐│М┐° -->
+		                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="loginForm.do">К║°Й╥╦Л²╦М≥■К╘╢</a>
                     	</c:when>
-                    	<c:otherwise> <!-- ╥н╠вюн╩Себ -->
-        		            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="loginForm.do">╥н╠в╬ф©Т</a>                    
+                    	<c:otherwise> <!-- К║°Й╥╦Л²╦Л┐│М┐° -->
+        		            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="logout.do">К║°Й╥╦Л∙└Л⌡┐ ${logid}</a>                    
+		                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="addBoardForm.do">Й╦─К⌠╠К║²</a>
                     	</c:otherwise>
                     </c:choose>
                     
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
                 </div>
             </div>

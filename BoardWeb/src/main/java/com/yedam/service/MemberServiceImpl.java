@@ -49,4 +49,9 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO getMember(String memberId) {
 		return mapper.selectMember(memberId);
 	}
+	@Override
+	public MemberVO loginCheck(String id, String pw) {
+		//로그인 확인.
+		return mapper.loginMember(id, pw);
+	}
 }

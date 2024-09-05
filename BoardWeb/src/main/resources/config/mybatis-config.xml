@@ -6,6 +6,7 @@
 	<settings> 
 		<setting name="mapUnderscoreToCamelCase" value="true"/> <!--이거 필수임 왜냐하면
 		전통적인 데이터베이스 칼럼명 형태인 A_COLUMN을 CamelCase형태의 자바 프로퍼티명 형태인 aColumn으로 자동으로 매핑하도록 함  sql에 있는걸 카멜케이스로 바꿔줌  -->
+		<setting name="jdbcTypeForNull" value="NULL"></setting>
 	</settings>
 	
 	<typeAliases>
