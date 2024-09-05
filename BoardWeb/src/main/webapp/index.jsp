@@ -13,6 +13,6 @@
 	
 	<a href ="memberList.do">목록 페이지로 이동</a>
 	<a href ="addForm.do">회원등록 페이지로 이동</a>
-		
+	<a href ="study.do"> 실험실</a>
 </body>
 </html>

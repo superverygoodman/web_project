@@ -43,10 +43,6 @@ public class BoardListControl implements Control {
 			List<BoardVO> list = svc.boardList(search);
 			request.setAttribute("list", list);
 			
-			System.out.println("gd");
-			svc.boardList(search).forEach(System.out::println);
-			System.out.println("gd");
-			
 			int totalCnt = svc.getTotalCnt(search);
 			PageDTO paging = new PageDTO(Integer.parseInt(page),totalCnt);
 			request.setAttribute("paging", paging);

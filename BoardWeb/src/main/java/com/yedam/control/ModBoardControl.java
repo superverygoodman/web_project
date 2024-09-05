@@ -17,11 +17,17 @@ public class ModBoardControl implements Control {
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String bno = request.getParameter("bno");
 		String page = request.getParameter("page");
-		request.setAttribute("page", page);
+		String sc = request.getParameter("searchCondition");
+		String kw = request.getParameter("keyword");
+			
 		BoardService bsv = new BoardServiceImpl();
 		BoardVO board = bsv.getBoard(Integer.parseInt(bno));
 		request.setAttribute("board", board);
-		
+		System.out.println(sc);
+		System.out.println(kw);
+		request.setAttribute("sc",sc);
+		request.setAttribute("kw", kw);
+		request.setAttribute("page",page);
 		
 		request.getRequestDispatcher("WEB-INF/board/boardInfo.jsp").forward(request, response);
 		

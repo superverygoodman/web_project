@@ -20,6 +20,9 @@ public class ModifyBoardControl implements Control {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String page = request.getParameter("page");
+		String sc = request.getParameter("sc");
+		String kw = request.getParameter("kw");
+
 		System.out.println(page);
 		System.out.println(bno);
 		BoardService bsv = new BoardServiceImpl();
@@ -29,8 +32,13 @@ public class ModifyBoardControl implements Control {
 		board.setContent(content);
 		
 		if(bsv.modifyBoard(board)) {
+//			request.setAttribute("page", page);
+//			request.setAttribute("searchCondition", sc);
+//			request.setAttribute("keyword", kw);
+//			
+//			request.getRequestDispatcher("WEB-INF/board/boardList.jsp").forward(request, response);
 			request.setAttribute("page", page);
-			response.sendRedirect("boardList.do?page="+page);
+			response.sendRedirect("boardList.do?page="+page+"&searchCondition="+sc+"&keyword="+kw);
 		} else {
 			request.setAttribute("msg", "변경이 실패했습니다.");
 			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/board/boardInfo.jsp");

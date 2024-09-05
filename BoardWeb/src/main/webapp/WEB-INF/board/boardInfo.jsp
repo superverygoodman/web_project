@@ -3,12 +3,15 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="../includes/header.jsp"></jsp:include>
 <h3>글 상세 페이지 <h3>
+<p>boardList.do?keyword=${kw}&searchCondition=${sc}&page=${page}</p>
 	<% 
 	BoardVO board = (BoardVO)request.getAttribute("board");
 	%>
 <form action="modifyControl.do">
 <input type="hidden" value="${board.boardNo}" name="bno">
 <input type="hidden" value="${page}" name="page">
+<input type="hidden" value="${sc}" name="sc">
+<input type="hidden" value="${kw}" name="kw">
 <table class="table">
 	<tr>
 		<th>글번호 : </th><td>${board.boardNo}</td>
@@ -30,9 +33,10 @@
 	</tr>
 </table>
 <button type="submit" >저장</button>
-<button >취소</button>
 </form>
 
+<a href="boardList.do?keyword=${kw}&searchCondition=${sc}&page=${page}" class="btn btn-secondary">a취소</a>
+<button onclick="location.href='boardList.do?keyword=${kw}&searchCondition=${sc}&page=${page}'" class="btn btn-secondary">취소1</button>
 
 </table>
 
