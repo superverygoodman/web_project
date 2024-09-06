@@ -50,7 +50,7 @@ public class RemoveBoardControl implements Control {
 			request.setAttribute("page", page);
 			request.setAttribute("bno", bno);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/board/board.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("board/board.tiles");
 			rd.forward(request, response);
 			
 			return;

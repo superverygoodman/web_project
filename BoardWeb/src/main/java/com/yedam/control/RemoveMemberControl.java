@@ -23,7 +23,7 @@ public class RemoveMemberControl implements Control {
 			response.sendRedirect("memberList.do");
 			} else {
 				request.setAttribute("msg", "삭제실패!");
-				request.getRequestDispatcher("WEB-INF/html/memberInfo.jsp");
+				request.getRequestDispatcher("html/memberInfo.tiles");
 			}
 		}
 

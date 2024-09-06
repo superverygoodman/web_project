@@ -12,7 +12,7 @@ public class introControll implements Control {
 
 	@Override
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/html/intro.jsp").forward(request, response);
+		request.getRequestDispatcher("html/intro.tiles").forward(request, response);
 		//gd
 	}
 

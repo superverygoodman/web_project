@@ -29,7 +29,7 @@ public class ModBoardControl implements Control {
 		request.setAttribute("kw", kw);
 		request.setAttribute("page",page);
 		
-		request.getRequestDispatcher("WEB-INF/board/boardInfo.jsp").forward(request, response);
+		request.getRequestDispatcher("board/boardInfo.tiles").forward(request, response);
 		
 		
 	}

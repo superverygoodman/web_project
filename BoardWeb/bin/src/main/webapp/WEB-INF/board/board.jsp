@@ -45,8 +45,12 @@
 </form>
 
 <a class ="btn btn-danger " onclick= "form_submit('boardList.do')" >목록으롷 a</a>
-<input type="button" onclick="location.href='boardList.do?page=${page}'" value ="목록으로">
-<input type="button" ${board.writer ne logid ? 'disabled' : ''} onclick="location.href='modifyBoard.do?page=${page}&bno=${bno}'" value ="수정버튼">
+<input type="button" onclick="location.href='boardList.do?keyword=${kw}&searchCondition=${sc}&page=${page}'" value ="목록으로">
+
+<input type="button" ${board.writer ne logid ? 'disabled' : ''} onclick="location.href='modifyBoard.do?keyword=${kw}&searchCondition=${sc}&page=${page}&bno=${bno}'" value ="수정버튼">
+<a class="btn btn-secondary" href = "modifyBoard.do?keyword=${kw}&searchCondition=${sc}&page=${page}&bno=${bno}">수정버튼a</a>
+
+
 <a class ="btn btn-danger " onclick= "form_submit('removeBoard.do')" >삭제버튼 a</a>
 <input type="button" onclick="location.href='removeBoard.do?keyword=${kw}&searchCondition=${sc}&page=${page}&bno=${bno}'" value ="삭제인풋버튼">
 <c:if test="${!empty message}">

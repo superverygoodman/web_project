@@ -8,21 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.common.Control;
 
-public class studycon implements Control {
+public class JavaScriptControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String page = "4";
-		String sc = "T";
-		String kw = "java";
-		
-		
-		request.setAttribute("page", page);
-		request.setAttribute("searchCondition", sc);
-		request.setAttribute("keyword", kw);
-		
-		request.getRequestDispatcher("WEB-INF/board/boardList.jsp").forward(request, response);
-
+		request.getRequestDispatcher("main/scriptForm.tiles").forward(request, response);
 	}
 
 }

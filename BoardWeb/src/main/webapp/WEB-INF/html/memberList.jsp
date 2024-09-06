@@ -3,7 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>>
 
-<jsp:include page="../includes/header.jsp"></jsp:include><body>
 	<%
 	//jsp ->서블릿으로 변환되어서 실행.
 	//memberList_jsp.class 실행.
@@ -24,6 +23,5 @@
 			<%} %>
 		</tbody>
 	</table>
-	<jsp:include page="../includes/footer.jsp"></jsp:include>>	
 </body>
 </html>

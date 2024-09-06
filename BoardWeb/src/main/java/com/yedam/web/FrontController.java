@@ -15,6 +15,7 @@ import com.yedam.common.Control;
 import com.yedam.control.AddFormControl;
 import com.yedam.control.AddMemberControl;
 import com.yedam.control.GetMemberControl;
+import com.yedam.control.JavaScriptControl;
 import com.yedam.control.MainControl;
 import com.yedam.control.MemberListControl;
 import com.yedam.control.ModFormControl;
@@ -43,6 +44,7 @@ public class FrontController extends HttpServlet{
 		System.out.println("init 메소드");
 		map.put("/main.do", new MainControl());
 		map.put("/sub.do", new SubControl());
+		map.put("/javascript.do", new JavaScriptControl());
 		Map<String, Control> memberMenu = MenuMember.getInstance().menuMap();
 		Map<String, Control> boardMenu  = MenuBoard.getInstance().menuMap();
 		//이렇게 나눈 이유는 충돌위험떄문에 한개의 파일에 작업을 여러사람이 나눠서 써서 충돌위험있음.

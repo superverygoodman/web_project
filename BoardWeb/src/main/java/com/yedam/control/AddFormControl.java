@@ -15,7 +15,7 @@ public class AddFormControl implements Control {
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// addForm.do를 요청 -> 요청재지정(WEB-INF/html/addForm.jsp) 
 		request.setAttribute("msg", "Hello, World");//request 객체에 msg 전달.
-		request.getRequestDispatcher("WEB-INF/html/addForm.jsp").forward(request, response);
+		request.getRequestDispatcher("html/addForm.tiles").forward(request, response);
 		
 //		PrintWriter out = response.getWriter();
 //		out.print("<h3>"+"hello"+"</h3>");
