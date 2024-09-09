@@ -18,7 +18,7 @@
 		select c.*
 		from
 			(select rownum rn, b.*
-		from
+			from
 			(select *
 		     from tbl_board
 		     where 

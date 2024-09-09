@@ -47,9 +47,14 @@ public class FrontController extends HttpServlet{
 		map.put("/javascript.do", new JavaScriptControl());
 		Map<String, Control> memberMenu = MenuMember.getInstance().menuMap();
 		Map<String, Control> boardMenu  = MenuBoard.getInstance().menuMap();
+		Map<String, Control> replyMenu = MenuReply.getInstance().menuMap();
+		
+		
 		//이렇게 나눈 이유는 충돌위험떄문에 한개의 파일에 작업을 여러사람이 나눠서 써서 충돌위험있음.
+		
 		map.putAll(memberMenu);//멤버관련 메뉴추가
 		map.putAll(boardMenu);//게시글 관련 추가
+		map.putAll(replyMenu);
 		//기능등록.
 //		map.put("/addMember.do", new AddMemberControl());  //회원등록처리
 //		map.put("/addForm.do", new AddFormControl()); //회원등록페이지.
