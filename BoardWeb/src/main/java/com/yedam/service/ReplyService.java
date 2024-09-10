@@ -8,5 +8,6 @@ public interface ReplyService {
 	List<ReplyVO> replyList(int bno);
 	boolean removeReply(int rno);
 	boolean removeReplys(String[] array);
-	boolean addReply(ReplyVO reply);
+	boolean addReply(ReplyVO rvo);
+
 }

@@ -27,8 +27,10 @@ public class ReplyServiceImpl implements ReplyService{
 		return mapper.deleteReplys(array) > 0;
 	}
 	@Override
-	public boolean addReply(ReplyVO reply) {
-		return mapper.insertReplys(reply)==1;
+	public boolean addReply(ReplyVO rvo) {
+		int rno = mapper.selectKey();
+		rvo.setReplyNo(rno);
+		return mapper.insertReply(rvo) == 1;
 	}
 	
 }

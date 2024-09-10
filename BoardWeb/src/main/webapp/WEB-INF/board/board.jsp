@@ -3,12 +3,26 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<style>
+	div.reply div {
+		margin: auto;
+		
+	}
+	div.reply ul {
+		list-style-type:none;
+	}
+	div.reply span{
+		display: inline-block;
+	}
+</style>
 <h3>글 상세 페이지 </h3>
 <p>${sc},${kw}</p>
 
 	<% 
 	BoardVO board = (BoardVO)request.getAttribute("board");
 	%>
+<p>${bno}</p>
+<p>${writer}</p>
 <table class="table">
 
 	<tr>
@@ -56,9 +70,47 @@
 	<span style="color:red;">${message}</span>
 </c:if>
 
+<div class="container reply">
+	<!-- 댓글 등록 -->
+	<div class="header">
+		<input type="text" id="reply" class="col-sm-8">
+		<button id="addReply" class="btn btn-primary">댓글등록</button>
+	</div>
+	<!-- 댓글 목록 -->
+	<div class="content">
+		<ul>
+			<li>
+				<span class="col-sm-2">글번호</span>
+				<span class="col-sm-5">댓글내용</span>
+				<span class="col-sm-2">작성자</span>								
+				<span class="col-sm-2">삭제</span>				
+			</li>
+			<li>
+				<hr/>
+			</li>
+			<li id="template">
+				<span class="col-sm-2">24</span>
+				<span class="col-sm-5">테스입니다</span>
+				<span class="col-sm-2">user01</span>								
+				<span class="col-sm-2"><button class="btn btn-danger">삭제</button></span>				
+			</li>
+			
+		</ul>
+	</div>
+	<!-- 댓글 페이징 -->
+
+</div>
+
+
 <script>
+	const bno = '${board.boardNo}';
+	const writer = '${logid}';
+	
 	function form_submit(uri) {
 		document.forms.actForm.action=uri;
 		document.forms.actForm.submit();
 	}
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/replyService.js"></script>
+<script src = "js/replyBoard.js"></script> 

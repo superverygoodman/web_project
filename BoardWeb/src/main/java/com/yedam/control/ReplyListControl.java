@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.yedam.common.Control;
 import com.yedam.service.ReplyService;
 import com.yedam.service.ReplyServiceImpl;
@@ -39,9 +41,11 @@ public class ReplyListControl implements Control {
 
 		}
 		json += "]";
+//		response.getWriter().print(json);
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		json = gson.toJson(list); //gson을 활용해서 json문자욜 생성
+		
 		response.getWriter().print(json);
-		
-		
 		
 		
 	}

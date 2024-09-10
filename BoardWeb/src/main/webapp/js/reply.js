@@ -15,27 +15,43 @@ xhtp.onload = function () {
 	result.forEach(reply => {
 		document.querySelector('.list').appendChild(makeRow(reply));
 		});
+}
 	let checkAll = document.querySelector('#allCheck');
 	checkAll.addEventListener('change', checksel);
 	
 	let check = document.querySelector('#check');
 	check.addEventListener('click',delCheckedFnc1);
-	
+/*
+document.querySelector('#addReply').addEventListener('click', function() {
+	let reply = document.querySelector('#reply').value;
+  const addHtp = new XMLHttpRequest();
+  addHtp.open('get', 'addReply.do?bno='+bno+'&reply='+reply +'&replyer='+replyer);
+  addHtp.send();
+  addHtp.onload = function(){
+	  let  result = JSON.parse(addHtp.responseText);
+	  console.log(result); // retCode, retVal=>{}
+	  let tr = makeRow(result.retVal);
+	  document.querySelector('.list').appendChild(tr);
+	  
+  }
+})
+*/	
 //	let addbtn = document.querySelector('#addReply');
 //	addbtn.addEventListener('click',addreply);
 	
-	documnet.querySelector('#addReply').addEventListener('click',function () {
+	document.querySelector('#addReply').addEventListener('click',function () {
 		let reply = document.querySelector('#reply').value;
 		const addHtp = new XMLHttpRequest();
 		addHtp.open('get','addReply.do?bno='+bno+'&reply='+reply+'&replyer='+replyer)
 		addHtp.send();
+		addHtp.onload = function() {
 		let result = JSON.parse(addHtp.responseText);
 		console.log(result);
 		let tr = makeRow(result.retVal);
 		document.querySelector('.list').appendChild(tr);
+		}
 		
 	})
-}
 
 function addreply () {
 	let replyCt = document.querySelector('#reply').value;
@@ -89,8 +105,8 @@ function delCheckedFnc1(e) {
 		let result = JSON.parse(delHtp.responseText);
 		if (result.retCode == 'OK') {
 			alert('완료');
-			document.querySelectorALL('.list input[type="checkbox"]:checked').forEach(item=> {
-				item.parentElement,parentElement.remove();
+			document.querySelectorAll('.list input[type="checkbox"]:checked').forEach(item=> {
+				item.parentElement.parentElement.remove();
 			})
 		} else {
 			alter('처리중 예외');
