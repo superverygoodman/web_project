@@ -30,8 +30,6 @@ let result =data.filter(function(item, idx,ary) {
 })
 let btn = document.querySelector("searchBtn");
 btn.addEventListener('click', function () {
-	let salary = 
-	let gender
 	
 })
 console.log(result);

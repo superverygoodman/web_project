@@ -63,8 +63,8 @@ function makeRow( reply = {}){
 
 
 const svc = {
-	replyList: function (bno=1, successCallback, errorCallback) {
-		fetch('replyList.do?bno='+bno)
+	replyList: function (param={bno:1,page:1}, successCallback, errorCallback) {
+		fetch('replyList.do?bno='+param.bno+'&page='+param.page)
 		.then(resolve => resolve.json())
 		.then(successCallback)
 		.catch(errorCallback)
@@ -82,6 +82,12 @@ const svc = {
 			headers:{'Content-Type':'application/x-www-form-urlencoded'},
 			body: 'bno='+param.bno+'&reply='+param.reply+'&replyer='+param.replyer
 		})
+		.then(resolve => resolve.json())
+		.then(successCallback)
+		.catch(errorCallback)
+	},
+	replyPagingCount(bno=1,successCallback,errorCallback) {
+		fetch('replyCount.do?bno='+bno)
 		.then(resolve => resolve.json())
 		.then(successCallback)
 		.catch(errorCallback)

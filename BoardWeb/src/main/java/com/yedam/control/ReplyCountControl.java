@@ -10,22 +10,18 @@ import com.yedam.common.Control;
 import com.yedam.service.ReplyService;
 import com.yedam.service.ReplyServiceImpl;
 
-public class RemoveReplysControl implements Control {
+public class ReplyCountControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String[] params = request.getParameterValues("rno"); // ?rno=1&rno=2&rno=3
-
+		//bno에 대한 댓글 건수 반환 json.
+		String bno = request.getParameter("bno");
 		ReplyService svc = new ReplyServiceImpl();
-		if (svc.removeReplys(params)) {
-			// {"retCode": "OK"}
-			response.getWriter().print("{\"retCode\": \"OK\"}");
-		} else {
-			// {"retCode": "NG"}
-			response.getWriter().print("{\"retCode\": \"NG\"}");
-
-		}
+		int totalCnt = svc.getReplyCount(Integer.parseInt(bno));
+		
+		
+		//{"totalCount":35}
+		response.getWriter().print("{\"totalCount\":"+totalCnt+"}");
 	}
 
 }

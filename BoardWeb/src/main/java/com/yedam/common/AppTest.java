@@ -9,10 +9,11 @@ public class AppTest {
 	public static void main(String[] args) {
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ReplyMapper mapper = sqlSession.getMapper(ReplyMapper.class);
+		SearchDTO search = new SearchDTO();
 		
-		String[] arg = {"23","24","27","28"};
-		
-		mapper.deleteReplys(arg);
+		search.setBoardNo(148);
+		search.setPage(3);
+		mapper.selectListPaging(search).forEach(reply -> System.out.println(reply.toString()));
 		
 	}
 
