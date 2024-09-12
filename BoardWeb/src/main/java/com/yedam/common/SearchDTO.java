@@ -9,4 +9,11 @@ public class SearchDTO {
 	private String keyword; //검색키워드
 	private int page; //페이지
 	private int boardNo; //몇번글의 댓글.
+	
+	
+	//event 관련.
+	private String title;
+	private String start;
+	private String end;
+	
 }

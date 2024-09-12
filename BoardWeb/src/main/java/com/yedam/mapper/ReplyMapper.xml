@@ -59,5 +59,25 @@
   	where board_no = #{bno} 
   </select>
 	
+	
+	
+	<select id ="selectEvent" useCache = "false" resultType="map"> <!-- 
+	 마이바티스는 메모리를 아끼기 위해 한번썻던 쿼리는 캐시에 저장해놈 그래서 다시 실행하면 새로 쿼리가 아닌 전에[했던 쿼리값 그대로 가져옴 그래서 유즈캐시를 폴스로 하면 할때마다 새로하게 해줌 -->
+		select title as "title"
+			  ,start_date as "start"
+			  ,end_date as "end"
+		from  tbl_calendar
+	</select>
+	
+	<insert id="insertEvent" parameterType="com.yedam.common.SearchDTO">
+		insert into tbl_calendar values(#{title},#{start},#{end})
+	</insert>
+
+	<delete id="deleteEvent" parameterType="com.yedam.common.SearchDTO">
+		delete from tbl_calendar
+		where title = #{title}
+		and   start_date = #{start}
+		and   end_date = #{end}
+	</delete>
 </mapper>
 

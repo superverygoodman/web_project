@@ -89,6 +89,7 @@
 	<div class="header">
 		<input type="text" id="reply" class="col-sm-8">
 		<button id="addReply" class="btn btn-primary" data-page=1>댓글등록</button>
+		<button id="delReply" class="btn btn-danger" >댓글삭제</button>
 	</div>
 	<!-- 댓글 목록 -->
 	<table id="example" class="display" style="width:100%">

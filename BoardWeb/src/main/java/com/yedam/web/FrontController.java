@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.yedam.common.Control;
 import com.yedam.control.AddFormControl;
 import com.yedam.control.AddMemberControl;
+import com.yedam.control.EventControl;
 import com.yedam.control.GetMemberControl;
 import com.yedam.control.JavaScriptControl;
 import com.yedam.control.MainControl;
@@ -45,6 +46,12 @@ public class FrontController extends HttpServlet{
 		map.put("/main.do", new MainControl());
 		map.put("/sub.do", new SubControl());
 		map.put("/javascript.do", new JavaScriptControl());
+		
+		// fullcalendar 관련.
+		map.put("/eventList.do", new EventControl());
+		map.put("/addEvent.do", new EventControl());
+		map.put("/removeEvent.do", new EventControl());
+		
 		Map<String, Control> memberMenu = MenuMember.getInstance().menuMap();
 		Map<String, Control> boardMenu  = MenuBoard.getInstance().menuMap();
 		Map<String, Control> replyMenu = MenuReply.getInstance().menuMap();
@@ -82,7 +89,6 @@ public class FrontController extends HttpServlet{
 		String uri = req.getRequestURI(); //http://localhost/BoardWeb/main.do // uri = BoardWeb/main.do //  BoardWeb(프로젝트명)/main.do(요청하는 페이지)
 		String context =  req.getContextPath(); // /BoardWeb
 		String page = uri.substring(context.length()); // /main.do
-		System.out.println(page);
 		
 		Control control = map.get(page);
 		control.exec(req, resp);
