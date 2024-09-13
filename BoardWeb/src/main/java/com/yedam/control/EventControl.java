@@ -37,7 +37,6 @@ public class EventControl implements Control {
 		//요청 uri값에서 /와 .do를 제외한 값을 실행할 메소드의 지정
 		String methodName = page.substring(1,page.indexOf(".")); 
 		System.out.println(methodName);
-		
 		try {
 			Class<?> cls = Class.forName(this.getClass().getName());//현재 클래스의 정보가 담긴것, 그 클래스의 
 			Method method = cls.getDeclaredMethod(methodName, //메소의 이름 //그 클래스의 메소드들을 반환해줌. (methodName, 파라미터)
@@ -113,5 +112,25 @@ public class EventControl implements Control {
 		}
 		
 	}
-
+	//chart의 json 데이터.
+	public void chart(HttpServletRequest request, HttpServletResponse response) {
+		List<Map<String,Object>> list = svc.countPerWriter();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String json = gson.toJson(list);
+		try {
+			response.getWriter().print(json);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	//chart의 페이지 호출 메소드
+	public void showChart(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			request.getRequestDispatcher("admin/chart.tiles").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

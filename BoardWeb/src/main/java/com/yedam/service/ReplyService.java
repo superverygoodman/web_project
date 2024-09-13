@@ -20,5 +20,6 @@ public interface ReplyService {
 	boolean addEvent(SearchDTO event);
 	boolean removeEvent(SearchDTO event);
 	
-	
+	//chart관련
+	List<Map<String, Object>> countPerWriter();
 }
